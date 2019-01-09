@@ -2,9 +2,7 @@ pipeline {
     agent any 
     stages {
         stage('Build Image') {
-            agent {
-                agent { dockerfile true }
-            }
+            agent { dockerfile true }
             steps {
                 sh 'ruby --version' 
             }
