@@ -8,6 +8,14 @@ pipeline {
             }
         }
         stage('Publish Image') {
+	    agent { 
+            docker {
+                image '7666efccbf0e5358982607967ddbe7730a4edb8c'
+                registryUrl 'fra.ocir.io'
+                registryCredentialsId 'dockercred'
+                args '-v /var/jenkins_home/.m2:/root/.m2'
+                }
+            }
             steps {
                 echo 'Hello world!' 
             }
