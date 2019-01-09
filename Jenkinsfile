@@ -2,8 +2,11 @@ pipeline {
     agent any 
     stages {
         stage('Build Image') {
+            agent {
+                agent { dockerfile true }
+            }
             steps {
-                echo 'Hello world!' 
+                sh 'ruby --version' 
             }
         }
         stage('Publish Image') {
