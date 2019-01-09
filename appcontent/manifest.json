@@ -1,0 +1,11 @@
+{
+  "runtime": {
+    "majorVersion": "2.4.1"
+  },
+  "command": "ruby httpserver.rb",
+  "startupTime": 30,
+  "shutdownTime": 0,
+  "isClustered": false,
+  "requiresAntiAffinity": false,
+  "notes": "notes for release"
+}
