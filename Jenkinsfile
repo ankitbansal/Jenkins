@@ -13,7 +13,7 @@ pipeline {
                                       usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
                         sh 'docker login -u "$USERNAME" -p "$PASSWORD" -r "fra.ocir.io"'
                         sh "docker tag 7666efccbf0e5358982607967ddbe7730a4edb8c fra.ocir.io/psmsvc3/jenkins/httpserver_ruby"
-                        docker.image("fra.ocir.io/psmsvc3/jenkins/httpserver_ruby").push()
+                        sh "docker push fra.ocir.io/psmsvc3/jenkins/httpserver_ruby"
                 }
             }
         }
