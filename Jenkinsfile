@@ -16,7 +16,8 @@ pipeline {
                 }
             }
             steps {
-                echo 'Hello world!' 
+                docker.tag('7666efccbf0e5358982607967ddbe7730a4edb8c' 'fra.ocir.io/psmsvc3/jenkins/httpserver_ruby')
+                docker.push('fra.ocir.io/psmsvc3/jenkins/httpserver_ruby')
             }
         }
         stage('Deploy Application') {
